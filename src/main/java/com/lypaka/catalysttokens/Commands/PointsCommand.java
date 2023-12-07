@@ -14,7 +14,7 @@ public class PointsCommand  {
 
     public PointsCommand (CommandDispatcher<CommandSource> dispatcher) {
 
-        for (String a : BetterTokensCommand.ALIASES) {
+        for (String a : CatalystTokensCommand.ALIASES) {
 
             dispatcher.register(
                     Commands.literal(a)
@@ -31,7 +31,7 @@ public class PointsCommand  {
                                                                                                 if (c.getSource().getEntity() instanceof ServerPlayerEntity) {
 
                                                                                                     ServerPlayerEntity player = (ServerPlayerEntity) c.getSource().getEntity();
-                                                                                                    if (!PermissionHandler.hasPermission(player, "bettertokens.command.admin")) {
+                                                                                                    if (!PermissionHandler.hasPermission(player, "catalysttokens.command.admin")) {
 
                                                                                                         player.sendMessage(FancyText.getFormattedText("&cYou don't have permission to use this command!"), player.getUniqueID());
                                                                                                         return 0;
@@ -60,7 +60,7 @@ public class PointsCommand  {
                                                                                                 if (c.getSource().getEntity() instanceof ServerPlayerEntity) {
 
                                                                                                     ServerPlayerEntity player = (ServerPlayerEntity) c.getSource().getEntity();
-                                                                                                    if (!PermissionHandler.hasPermission(player, "bettertokens.command.admin")) {
+                                                                                                    if (!PermissionHandler.hasPermission(player, "catalysttokens.command.admin")) {
 
                                                                                                         player.sendMessage(FancyText.getFormattedText("&cYou don't have permission to use this command!"), player.getUniqueID());
                                                                                                         return 0;

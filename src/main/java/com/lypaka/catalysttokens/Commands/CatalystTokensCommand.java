@@ -10,9 +10,9 @@ import java.util.Arrays;
 import java.util.List;
 
 @Mod.EventBusSubscriber(modid = CatalystTokens.MOD_ID)
-public class BetterTokensCommand {
+public class CatalystTokensCommand {
 
-    public static List<String> ALIASES = Arrays.asList("bettertokens", "btokens", "tokens");
+    public static List<String> ALIASES = Arrays.asList("catalysttokens", "ctokens", "tokens");
 
     @SubscribeEvent
     public static void onCommandRegistration (RegisterCommandsEvent event) {

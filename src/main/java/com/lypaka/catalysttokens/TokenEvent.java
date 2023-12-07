@@ -1,7 +1,5 @@
 package com.lypaka.catalysttokens;
 
-import com.lypaka.catalysttokens.Listeners.EventRegistry;
-
 import java.util.Map;
 
 public class TokenEvent {

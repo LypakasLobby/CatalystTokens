@@ -1,4 +1,4 @@
-package com.lypaka.catalysttokens.Listeners;
+package com.lypaka.catalysttokens;
 
 import com.google.common.reflect.TypeToken;
 import com.lypaka.catalysttokens.CatalystTokens;

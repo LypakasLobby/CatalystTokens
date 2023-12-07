@@ -12,7 +12,6 @@ import java.util.Map;
 
 public class ConfigGetters {
 
-    public static boolean useBetterGUIs;
     public static String mainGUIName;
     public static int mainGUIRows;
     public static String mainGUIBorderID;
@@ -32,7 +31,6 @@ public class ConfigGetters {
     public static void load() throws ObjectMappingException {
 
         message = CatalystTokens.configManager.getConfigNode(0,"Message").getString();
-        useBetterGUIs = CatalystTokens.configManager.getConfigNode(0, "BetterGUIs-Installed").getBoolean();
         mainGUIName = CatalystTokens.configManager.getConfigNode(0, "GUI", "Name").getString();
         mainGUIRows = CatalystTokens.configManager.getConfigNode(0, "GUI", "Rows").getInt();
         mainGUIBorderID = CatalystTokens.configManager.getConfigNode(0, "GUI", "Slots", "Border", "ID").getString();

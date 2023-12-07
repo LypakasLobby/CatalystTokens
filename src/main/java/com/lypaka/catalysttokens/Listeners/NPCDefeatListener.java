@@ -1,6 +1,7 @@
 package com.lypaka.catalysttokens.Listeners;
 
 import com.lypaka.catalysttokens.ConfigGetters;
+import com.lypaka.catalysttokens.EventRegistry;
 import com.lypaka.catalysttokens.TokenEvent;
 import com.lypaka.lypakautils.MiscHandlers.PermissionHandler;
 import com.pixelmonmod.pixelmon.api.events.BeatTrainerEvent;

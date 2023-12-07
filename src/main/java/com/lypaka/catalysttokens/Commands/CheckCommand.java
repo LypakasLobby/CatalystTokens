@@ -17,7 +17,7 @@ public class CheckCommand {
 
     public CheckCommand (CommandDispatcher<CommandSource> dispatcher) {
 
-        for (String a : BetterTokensCommand.ALIASES) {
+        for (String a : CatalystTokensCommand.ALIASES) {
 
             dispatcher.register(
                     Commands.literal(a)
@@ -28,21 +28,20 @@ public class CheckCommand {
                                                 if (c.getSource().getEntity() instanceof ServerPlayerEntity) {
 
                                                     ServerPlayerEntity player = (ServerPlayerEntity) c.getSource().getEntity();
+                                                    if (getPlayerPoints(player) <= 0.0) {
 
+                                                        amount = 0;
 
-                                                    if ( getPlayerPoints(player) <= 0.0) {
+                                                    } else {
 
-                                                            amount = 0;
-                                                        } else {
-                                                            DecimalFormat df = new DecimalFormat("#");
-                                                            amount = Integer.parseInt(df.format(getPlayerPoints(player)));
-                                                        }
+                                                        DecimalFormat df = new DecimalFormat("#");
+                                                        amount = Integer.parseInt(df.format(getPlayerPoints(player)));
+
+                                                    }
                                                     player.sendMessage(FancyText.getFormattedText(message.replace("%amount%" ,String.valueOf(amount))), player.getUniqueID());
 
 
                                                 }
-
-
 
                                                 return 1;
 

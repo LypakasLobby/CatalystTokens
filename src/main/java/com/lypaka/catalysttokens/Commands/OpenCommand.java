@@ -16,12 +16,9 @@ import ninja.leaping.configurate.objectmapping.ObjectMappingException;
 
 public class OpenCommand  {
 
-    private static final SuggestionProvider<CommandSource> MENUS = (context, builder) ->
-            ISuggestionProvider.suggest(MenuRegistry.menuMap.keySet(), builder);
-
     public OpenCommand (CommandDispatcher<CommandSource> dispatcher) {
 
-        for (String a : BetterTokensCommand.ALIASES) {
+        for (String a : CatalystTokensCommand.ALIASES) {
 
             dispatcher.register(
                     Commands.literal(a)
@@ -31,13 +28,16 @@ public class OpenCommand  {
                                                     Commands.argument("player", EntityArgument.player())
                                                             .then(
                                                                     Commands.argument("menu", StringArgumentType.word())
-                                                                            .suggests(MENUS)
+                                                                            .suggests(
+                                                                                    (context, builder) ->
+                                                                                            ISuggestionProvider.suggest(MenuRegistry.menuMap.keySet(), builder)
+                                                                            )
                                                                             .executes(c -> {
 
                                                                                 if (c.getSource().getEntity() instanceof ServerPlayerEntity) {
 
                                                                                     ServerPlayerEntity player = (ServerPlayerEntity) c.getSource().getEntity();
-                                                                                    if (!PermissionHandler.hasPermission(player, "bettertokens.command.admin")) {
+                                                                                    if (!PermissionHandler.hasPermission(player, "catalysttokens.command.admin")) {
 
                                                                                         player.sendMessage(FancyText.getFormattedText("&cYou don't have permission to use this command!"), player.getUniqueID());
                                                                                         return 0;

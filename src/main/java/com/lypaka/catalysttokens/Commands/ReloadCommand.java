@@ -2,7 +2,7 @@ package com.lypaka.catalysttokens.Commands;
 
 import com.lypaka.catalysttokens.CatalystTokens;
 import com.lypaka.catalysttokens.ConfigGetters;
-import com.lypaka.catalysttokens.Listeners.EventRegistry;
+import com.lypaka.catalysttokens.EventRegistry;
 import com.lypaka.catalysttokens.TokenMenus.MenuRegistry;
 import com.lypaka.lypakautils.FancyText;
 import com.lypaka.lypakautils.MiscHandlers.PermissionHandler;
@@ -16,7 +16,7 @@ public class ReloadCommand {
 
     public ReloadCommand (CommandDispatcher<CommandSource> dispatcher) {
 
-        for (String a : BetterTokensCommand.ALIASES) {
+        for (String a : CatalystTokensCommand.ALIASES) {
 
             dispatcher.register(
                     Commands.literal(a)
@@ -27,7 +27,7 @@ public class ReloadCommand {
                                                 if (c.getSource().getEntity() instanceof ServerPlayerEntity) {
 
                                                     ServerPlayerEntity player = (ServerPlayerEntity) c.getSource().getEntity();
-                                                    if (!PermissionHandler.hasPermission(player, "bettertokens.command.admin")) {
+                                                    if (!PermissionHandler.hasPermission(player, "catalysttokens.command.admin")) {
 
                                                         player.sendMessage(FancyText.getFormattedText("&cYou don't have permission to use this command!"), player.getUniqueID());
                                                         return 0;
@@ -46,7 +46,7 @@ public class ReloadCommand {
                                                     CatalystTokens.menuConfigManager.load(); // reload your own fucking config managers you twat
                                                     MenuRegistry.load();
                                                     EventRegistry.load();
-                                                    c.getSource().sendFeedback(FancyText.getFormattedText("&aSuccessfully reloaded BetterTokens!"), true);
+                                                    c.getSource().sendFeedback(FancyText.getFormattedText("&aSuccessfully reloaded CatalystTokens!"), true);
 
                                                 } catch (ObjectMappingException e) {
 

@@ -1,6 +1,5 @@
 package com.lypaka.catalysttokens;
 
-import com.lypaka.catalysttokens.Listeners.EventRegistry;
 import com.lypaka.catalysttokens.TokenMenus.MenuRegistry;
 import com.lypaka.lypakautils.ConfigurationLoaders.BasicConfigManager;
 import com.lypaka.lypakautils.ConfigurationLoaders.ComplexConfigManager;
