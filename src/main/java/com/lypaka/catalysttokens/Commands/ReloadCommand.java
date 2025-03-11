@@ -12,6 +12,8 @@ import net.minecraft.command.Commands;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import ninja.leaping.configurate.objectmapping.ObjectMappingException;
 
+import java.util.Map;
+
 public class ReloadCommand {
 
     public ReloadCommand (CommandDispatcher<CommandSource> dispatcher) {
@@ -38,9 +40,10 @@ public class ReloadCommand {
 
                                                 try {
 
-                                                    CatalystTokens.configManager.getConfigNode(2, "Points").setValue(ConfigGetters.pointsMap);
-                                                    CatalystTokens.configManager.save();
+                                                    Map<String, Double> temp = ConfigGetters.pointsMap;
                                                     CatalystTokens.configManager.load();
+                                                    CatalystTokens.configManager.getConfigNode(2, "Points").setValue(temp);
+                                                    CatalystTokens.configManager.save();
                                                     ConfigGetters.load();
                                                     CatalystTokens.menuConfigManager.setFileNames(ConfigGetters.menuList);
                                                     CatalystTokens.menuConfigManager.load(); // reload your own fucking config managers you twat
